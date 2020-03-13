@@ -4,11 +4,11 @@ kind: Deployment
 
 metadata:
 
-  name: jupytersparknew-notebook
+  name: jupyterspark-notebook
 
   labels:
 
-    app: jupytersparknew-notebook
+    app: jupyterspark-notebook
 
 spec:
 
@@ -18,7 +18,7 @@ spec:
 
     matchLabels:
 
-      app: jupytersparknew-notebook
+      app: jupyterspark-notebook
 
   template:
 
@@ -26,7 +26,7 @@ spec:
 
       labels:
 
-        app: jupytersparknew-notebook
+        app: jupyterspark-notebook
 
     spec:
 
@@ -44,7 +44,7 @@ apiVersion: v1
 
 metadata:
 
-  name: jupytersparknew-notebook
+  name: jupyterspark-notebook
 
 spec:
 
@@ -52,13 +52,13 @@ spec:
 
   selector:
 
-    app: jupytersparknew-notebook
+    app: jupyterspark-notebook
 
   ports:
 
   - protocol: TCP
 
-    nodePort: 30060
+    nodePort: 30070
 
     port: 8888
 
