@@ -1,0 +1,65 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+
+  name: jupytersparknew-notebook
+
+  labels:
+
+    app: jupytersparknew-notebook
+
+spec:
+
+  replicas: 1
+
+  selector:
+
+    matchLabels:
+
+      app: jupytersparknew-notebook
+
+  template:
+
+    metadata:
+
+      labels:
+
+        app: jupytersparknew-notebook
+
+    spec:
+
+      containers:
+
+      - name: spark-notebook
+
+        image: akasharvind/jupiter
+
+---
+
+kind: Service
+
+apiVersion: v1
+
+metadata:
+
+  name: jupytersparknew-notebook
+
+spec:
+
+  type: NodePort
+
+  selector:
+
+    app: jupytersparknew-notebook
+
+  ports:
+
+  - protocol: TCP
+
+    nodePort: 30060
+
+    port: 8888
+
+    targetPort: 8888
